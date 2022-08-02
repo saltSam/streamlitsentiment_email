@@ -80,7 +80,7 @@ def main():
 		
 		if st.button("Analyze"):
 			if raw_text != " ":
-				result = get_text(raw_text)
+				result = raw_text
 				blob = TextBlob(result)
 				
 				c_sentences= blob.split("#")
