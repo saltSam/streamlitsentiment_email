@@ -76,14 +76,14 @@ def main():
 		c_sentiment =[]
 		st.subheader("Analysis on Emails text")
 		raw_text = st.text_area("Paste Your Text","  ")
-		st.write("Please use: '__##__' as delmeter for each mail")
+		st.write("Please use: '#' as delmeter for each mail")
 		
 		if st.button("Analyze"):
-			if raw_text != "Paste Your Text":
+			if raw_text != " ":
 				result = get_text(raw_text)
 				blob = TextBlob(result)
 				
-				c_sentences= blob.split("__##__")
+				c_sentences= blob.split("#")
 				for sent in c_sentences:
 					blob = TextBlob(sent)
 					c_sentiment.append(blob.sentiment.polarity)
